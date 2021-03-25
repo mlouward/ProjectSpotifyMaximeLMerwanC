@@ -3,11 +3,11 @@ const SpotifyWebApi = require('spotify-web-api-node');
 
 class Spotify {
 
-  constructor() {
+  constructor({clientId, clientSecret}) {
     const scopes = ['user-read-private', 'playlist-read-private'],
       redirectUri = 'https://ProjectSpotifyMaximeLMerwanC.maximelouward.repl.co/spotify',
-      clientId = '6a8eaebcb1114d30b64e28f3b2447466',
-      clientSecret = '7b37f4e346f1486ea245e81c1fb05fa4';
+      clientId = clientId,
+      clientSecret = clientSecret;
 
     this.spotifyApi = new SpotifyWebApi({
       redirectUri: redirectUri,
@@ -89,4 +89,4 @@ class Spotify {
 
 }
 
-module.exports = new Spotify()
+module.exports = Spotify;

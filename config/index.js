@@ -7,9 +7,12 @@ if (process.env.NODE_ENV === 'production') {
       pageAccessToken: process.env.pageAccessToken,
       VerifyToken: process.env.VerifyToken,
       appSecret: process.env.appSecret
+    },
+    Spotify: {
+      clientId: process.env.clientId,
+      clientSecret: process.env.clientSecret
     }
   }
 } else {
-  console.log('noenv')
-  module.exports = require('./development.json');
+  console.log('noenv');
 }
